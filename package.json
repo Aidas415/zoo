@@ -1,0 +1,14 @@
+{
+  "name": "zoo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "batai": "node --watch ./batai.js",
+    "zoo": "node --watch ./zoo.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
