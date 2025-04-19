@@ -50,14 +50,15 @@ class VaikiskiBatai extends avalyne {
 const rieker = new VyriskiBatai('Rieker', 'zieminiai', 43);
 const timberland = new MoteriskiBatai('Timberland', 'demisezoniniai', 38);
 const jordan = new VaikiskiBatai('Jordan', 'vasariniai', 22 )
-const batuDeze = [rieker, timberland, jordan, new VaikiskiBatai('grun01', 'zieminiai', 23)];
+const batuDeze = [rieker, timberland, jordan, new VaikiskiBatai('grun', 'zieminiai', 23)];
 batuDeze[3].spalva = 'pilka';
+batuDeze[3].material = 'odiniai';
 console.log('------------');
 //console.log(batuDeze[3]);
 //console.log(batuDeze[1]);
 //console.log(batuDeze[0])
 //console.log(batuDeze[2])
-
+//console.log(batuDeze);
 
 
 class rubai {
@@ -133,20 +134,34 @@ const rab = new Striukes('Rab', 'ziemine', 'XL');
 //console.log(rab);
 //console.log(lorr);
 
-const spinta = [mondo, bigStar, rab, lorr, new Striukes('J.Style', 'demisezonine', 'L'), new Kelnes('Bigman', 'vasarines', 34)];
+const spinta = [bigStar, rab, lorr, new Striukes('J.Style', 'demisezonine', 'L'), new Kelnes('Bigman', 'vasarines', 34)];
 //console.log(spinta);
 //console.log(spinta[5]);
-spinta[5].spalva = 'juoda';
-spinta[5].material = 'dzinsas';
-spinta[5].stilius = 'laisvalaikio';
-spinta[5].skalbti = 40;
+spinta[4].spalva = 'juoda';
+spinta[4].material = 'dzinsas';
+spinta[4].stilius = 'laisvalaikio';
+spinta[4].skalbti = 40;
+//console.log(spinta);
+const drabuzine = [...batuDeze, ...spinta];
+console.log(drabuzine);
+//console.log(spinta);
+//console.log(batuDeze);
 
+//?????????????????
+/*
+function vasarosApdaras(drabuzine) {
+    let vasarai = [];
+    for (const vasarosApdaras of drabuzine) {
+        
+        if (drabuzine[i].sezonas === 'vasariniai' || 'vasarines' || 'vasarine' || vasarai || '') {
+            vasarai.push(drabuzine[i]); 
+        }
+    }
+    return vasarai;
+}
 
-
-
-
-
-
+console.log(vasarosApdaras(drabuzine));
+*/
 
 
 

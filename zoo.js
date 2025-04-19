@@ -71,14 +71,14 @@ class Flamingo extends animal{
 }
 
 const simba = new Lion("Simba", 4)
-console.log(simba.name);
-console.log(simba.isHungry);
-console.log(simba.feed("meat"));
-console.log(simba.isHungry);
-console.log(simba.feed());
+console.log(simba.name);                // Simba
+console.log(simba.isHungry);            // true
+console.log(simba.feed("meat"));        // Ačiū už pietus
+console.log(simba.isHungry);            // false
+console.log(simba.feed());              // Nenoriu valgyti
 
 const kowalski = new Penguin("Kowalski", 10)
-console.log(kowalski.legCount)
+console.log(kowalski.legCount)            // 2
 
 
 const zoo = [kowalski, simba, new Lion("Puma", 8), new Penguin("Rico", 3), new Flamingo("Richard", 6)]
@@ -102,7 +102,7 @@ function oldestAnimal(animals)
     return animal;
 }
 
-console.log(oldestAnimal(zoo))
+console.log(oldestAnimal(zoo))             // Kowalsky
 
 function collectBirds(animals)
 {
@@ -110,7 +110,7 @@ function collectBirds(animals)
 
     for(i in animals)
     {
-        if(animals[i].wingCount!=undefined)
+        if(animals[i].wingCount != undefined)
         {
             birds.push(animals[i]);
         }
@@ -119,3 +119,18 @@ function collectBirds(animals)
 }
 
 console.log(collectBirds(zoo))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
