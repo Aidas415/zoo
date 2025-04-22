@@ -143,27 +143,29 @@ spinta[4].stilius = 'laisvalaikio';
 spinta[4].skalbti = 40;
 //console.log(spinta);
 const drabuzine = [...batuDeze, ...spinta];
-console.log(drabuzine);
+//console.log(drabuzine);
 //console.log(spinta);
 //console.log(batuDeze);
 
 //?????????????????
-/*
-function vasarosApdaras(drabuzine) {
+
+function vasarosApdaras(rubai) {
     let vasarai = [];
-    for (const vasarosApdaras of drabuzine) {
-        
-        if (drabuzine[i].sezonas === 'vasariniai' || 'vasarines' || 'vasarine' || vasarai || '') {
+    for (let i = 0; i < rubai.length; i++) {
+       
+        if (drabuzine[i].sezonas === 'vasariniai' || drabuzine[i].sezonas === 'vasarines' || drabuzine[i].sezonas ==='vasarine' || drabuzine[i].sezonas === 'vasarinis' || drabuzine[i].sezonas === '')
+        { 
             vasarai.push(drabuzine[i]); 
         }
+      
     }
     return vasarai;
 }
 
 console.log(vasarosApdaras(drabuzine));
-*/
 
 
+console.log()
 
 
 
