@@ -12,12 +12,14 @@ class animal{
         this.energy = 40;
     }
     hi() { 
-        this.energy -= 5;
-        if (this.energy <= 0) {
-            return `i need energy 💤`;
+       
+        if (this.energy < 5) {
+            return `Atsiprašau, ${this.name} reikia energijos 💤`;
         }
         else {
-        return `Hi, my name is ${this.name}!`;
+            this.energy -= 5;
+            return `Labas, mano vardas ${this.name}!`;
+           
         }
     }
     
@@ -35,11 +37,14 @@ class animal{
         }
         else
         {
-            return "Nenoriu valgyti."
+            return `${this.name} nenori valgyti.`
         }            
     }
     energy() {
 
+    }
+    sleep() {
+        this.energy += 20;
     }
     HappyBirthday() {
         ++this.age
@@ -75,14 +80,16 @@ class Penguin extends animal{
         return `"svypt, svypt!" 🐧`
     }
     trick(word) {
-        this.energy -= 10;
-        if (this.energy <= 0) {
-            return `i need energy 💤`
+       
+        if (this.energy < 10) {
+            return `Atsiprašau, ${this.name} reikia energijos 💤`
         }
         if (word === 'hi' || word === 'hello' || word === 'labas'){
-            return `👏👋 hi, my name is ${this.name}!`;
+            this.energy -= 10; 
+            return `👏👋 labas, mano vardas ${this.name}!`;
         } 
         else {
+            this.energy -= 10; 
             return `👏👋`
         }
     }
@@ -173,15 +180,17 @@ class Monkey extends animal {
     trick(left,right) {
         let n =0;
         n = left + right;
-        this.energy -= 10;
-        if (this.energy <= 0) {
-            return `I need energy 💤`;
+        
+        if (this.energy < 10) {
+            return `Atsiprašau, ${this.name} reikia energijos 💤`;
         }
         else if (left <= 5 && right <= 5){
-            return `beždžionė parodė ${n} pirštus`;
+            this.energy -= 10; 
+            return `${this.name} parodė ${n} pirštus`;
         }
         if (left > 5 || right > 5){
-            return `beždžionė į mus atgal meta saują purvo`;
+            this.energy -= 10; 
+            return `${this.name} į mus atgal meta saują purvo`;
         }
     }
 }
@@ -197,17 +206,20 @@ class Elephant extends animal {
         this.species = 'dramblys';
     }
     trick(weather) {
-        this.energy -= 10;
-        if (this.energy <= 0) {
-            return `I need energy 💤`
+       
+        if (this.energy < 10) {
+            return `Atsiprašau, ${this.name} reikia energijos 💤`
         }
         else if (weather === 'saulėta'){
+            this.energy -= 10; 
             return `🌈`;
         }
         if (weather === 'debesuota'){
+            this.energy -= 10; 
             return `💦`;
         }
         if (weather === 'šalta'){
+            this.energy -= 10; 
             return `🥶`
         }
     }
@@ -224,18 +236,22 @@ console.log(drum.trick('saulėta'));
 console.log(drum.trick('šalta'));
 console.log(drum.trick('debesuota'));
 drum.trick();
+drum.trick();
+console.log(drum);
 console.log(miki.trick(5,4));
 console.log(miki.hi());
 console.log(miki.trick(2,1));
 console.log(miki.trick(1,0));
 console.log(miki.trick(2,5));
 console.log(miki.hi());
+console.log('---------------');
 console.log(miki);
 //console.log(drum);
-console.log();
-
-
-
+console.log('---------------');
+console.log(miki.feed('fruit'))
+//console.log(miki.feed('fruit'))
+console.log(miki);
+console.log(miki.hi());
 
 
 
