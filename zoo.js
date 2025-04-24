@@ -7,11 +7,14 @@ class animal{
         this.name = name;
         this.age = age;
         this.legCount = 0;
-        this.isHungry = true;
+        this.isHungry = false;
         this.species = "unknown";
         this.energy = 40;
     }
     hi() { 
+        if (this.energy <= 15) {
+            this.isHungry = true;
+        }
        
         if (this.energy < 5) {
             return `Atsiprašau, ${this.name} reikia energijos 💤`;
@@ -25,6 +28,14 @@ class animal{
     
     feed(food) //liutas nori mesos, pingvinas nori zuvies, flamingas nori krevečiu
     {
+        if (this.energy <= 15) 
+        {
+            this.isHungry = true;
+        }
+        if (this.energy > 30) 
+        {
+            return `${this.name} nenori valgyti.`
+        }
         if(this.isHungry === true && this.wantedFood === food)
         {
             this.isHungry = false;
@@ -45,9 +56,13 @@ class animal{
     }
     sleep() {
         this.energy += 20;
+        if (this.energy <= 15) {
+            this.isHungry = true;
+        }
     }
     HappyBirthday() {
         ++this.age
+        return `${this.name}, sveikiname tave su gimtadieniuir skanaus tau torto iš ${this.wantedFood} 🎆🎇!`
     }
 }
 
@@ -86,10 +101,16 @@ class Penguin extends animal{
         }
         if (word === 'hi' || word === 'hello' || word === 'labas'){
             this.energy -= 10; 
+            if (this.energy <= 15) {
+                this.isHungry = true;
+            }
             return `👏👋 labas, mano vardas ${this.name}!`;
         } 
         else {
-            this.energy -= 10; 
+            this.energy -= 10;
+            if (this.energy <= 15) {
+                this.isHungry = true;
+            }
             return `👏👋`
         }
     }
@@ -186,10 +207,16 @@ class Monkey extends animal {
         }
         else if (left <= 5 && right <= 5){
             this.energy -= 10; 
+            if (this.energy <= 15) {
+                this.isHungry = true;
+            }
             return `${this.name} parodė ${n} pirštus`;
         }
         if (left > 5 || right > 5){
             this.energy -= 10; 
+            if (this.energy <= 15) {
+                this.isHungry = true;
+            }
             return `${this.name} į mus atgal meta saują purvo`;
         }
     }
@@ -212,14 +239,23 @@ class Elephant extends animal {
         }
         else if (weather === 'saulėta'){
             this.energy -= 10; 
+            if (this.energy <= 15) {
+                this.isHungry = true;
+            }
             return `🌈`;
         }
         if (weather === 'debesuota'){
             this.energy -= 10; 
+            if (this.energy <= 15) {
+                this.isHungry = true;
+            }
             return `💦`;
         }
         if (weather === 'šalta'){
             this.energy -= 10; 
+            if (this.energy <= 15) {
+                this.isHungry = true;
+            }
             return `🥶`
         }
     }
